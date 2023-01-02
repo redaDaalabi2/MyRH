@@ -2,6 +2,14 @@
 
 ![](https://simplonline.co/_next/image?url=https%3A%2F%2Fsimplonline-v3-prod.s3.eu-west-3.amazonaws.com%2Fmedia%2Fimage%2Fjpg%2F9d807460-4b4a-4e91-aea8-111932aab5a1.jpg&w=1280&q=75)
 
+### diagramme de cas d'utilisation
+
+![](./usecase_recrutement.jpg)
+
+### diagramme de classe
+
+![](./classe_recrutement.jpg)
+
 ### Contexte du projet
 
 Dans le Cadre de son développement, le cabinet MyRH souhaite simplifier la recherche d'emploi pour toutes les marocaines et marocains, pour cela il vous demande de créer une application web qui sera utilisée par les recruteurs et les chercheurs d'emploi.
