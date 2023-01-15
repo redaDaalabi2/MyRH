@@ -1,0 +1,77 @@
+<div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12 w-1/2 mx-auto mt-10">
+    <h3 class="mb-6 text-xl font-semibold sm:text-center sm:mb-8 sm:text-2xl">
+      Register pour la société
+    </h3>
+    <app-loader *ngIf="loader"></app-loader>
+    <form *ngIf="!ver && !loader" #addCompanyForm="ngForm" (ngSubmit)="register(addCompanyForm)" class="space-y-3 mt-4">
+      <div>
+        <label class="sr-only" for="company-name">Nom de société</label>
+        <input ngModel name="name" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Entrer le nom du société" type="text" id="company-name"/>
+      </div>
+
+      <!-- <div class="grid grid-cols-1 gap-4 sm:grid-cols-2"> -->
+        <div>
+          <label class="sr-only" for="email">Email</label>
+          <input ngModel name="email" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Entrer Email" type="email" id="email"/>
+        </div>
+
+        <div>
+          <label class="sr-only" for="phone">Telephone</label>
+          <input ngModel name="phone" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Enter numero de telephone" type="tel" id="phone"/>
+        </div>
+      <!-- </div> -->
+
+      <!-- <div class="grid grid-cols-1 gap-4 sm:grid-cols-2"> -->
+        <div>
+          <label class="sr-only" for="username">Username</label>
+          <input ngModel name="login" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Username" type="text" id="username"/>
+        </div>
+
+        <div>
+          <label class="sr-only" for="password">Mot de passe</label>
+          <input ngModel name="password" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Enter mot de passe" type="password" id="password"/>
+        </div>
+
+        <div>
+          <label class="sr-only" for="confirm-password">Confirmer mot de passe</label>
+          <input ngModel name="confirmPassword" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Confirmer le mot de passe" type="password" id="confirm-password"/>
+        </div>
+
+        <div>
+          <label class="sr-only" for="company-image">Image de recruteur</label>
+          <input ngModel name="imageUrl" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Enter image de recruteur" type="file" id="company-image"/>
+        </div>
+      <!-- </div> -->
+
+      <div>
+        <label class="sr-only" for="address">Addresse</label>
+        <textarea
+          class="w-full rounded-lg border-gray-200 p-3 text-sm"
+          placeholder="Address"
+          rows="4"
+          id="address"
+          ngModel
+          name="address"
+        ></textarea>
+      </div>
+
+      <div class="w-full mt-4 flex justify-center">
+        <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-5 py-3 text-white hover:bg-indigo-700">
+          S'inscrire
+        </button>
+      </div>
+    </form>
+
+    <form *ngIf="ver && !loader" class="space-y-3 mt-4" (ngSubmit)="confirmRegistration(codeVer.value)" >
+      <p class="text-xl text-gray-700">Nous vous avons envoyé un code pour vérifier votre email, veuillez entrer le code pour continuer votre inscription.</p>
+      <div>
+        <label class="sr-only" for="ver-code">Code de vérification</label>
+        <input #codeVer class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Entrer le code de vérification" type="number" id="ver-code"/>
+      </div>
+      <div class="mt-4 flex justify-end">
+        <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-indigo-600 px-5 py-3 text-white sm:w-auto hover:bg-indigo-700">
+          <span class="font-medium">Confirmer</span>
+        </button>
+      </div>
+    </form>
+</div>

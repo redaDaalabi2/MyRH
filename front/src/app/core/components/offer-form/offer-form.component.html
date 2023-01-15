@@ -1,0 +1,63 @@
+<div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12 w-1/2 mx-auto mt-5">
+  <h3 class="mb-6 text-xl font-semibold sm:text-center sm:mb-8 sm:text-2xl">
+    Ajouter une nouvelle offre d'emploi
+  </h3>
+  <app-loader *ngIf="loader"></app-loader>
+  <form *ngIf="!model && !loader" #addOfferForm="ngForm" (ngSubmit)="addJobOffer(addOfferForm)" class="space-y-3 mt-4">
+    <div>
+      <label class="sr-only" for="title">Titre</label>
+      <input ngModel name="title" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Entrer le titre" type="text" id="title"/>
+    </div>
+
+    <div class="grid grid-cols-2 gap-8 sm:grid-cols-4">
+      <div>
+        <label class="sr-only" for="location">Emplacement</label>
+        <input ngModel name="location" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Entrer l'emplacement" type="text" id="location"/>
+      </div>
+
+      <div>
+        <label class="sr-only" for="degree">Diplôme</label>
+        <input ngModel name="degree" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Entrer les diplômes" type="text" id="degree"/>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-8 sm:grid-cols-4">
+      <div>
+        <label class="sr-only" for="profile">Profile</label>
+        <select ngModel class="w-full rounded-lg border-gray-200 p-3 text-sm" name="profileId" id="profile">
+          <option value="" disabled selected>Choisire une profile</option>
+          <option *ngFor="let one of profiles" [value]="one.id">{{one.title}}</option>
+        </select>
+<!--        <input ngModel name="profile" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Profile" type="text" id="profile"/>-->
+      </div>
+
+      <div>
+        <label class="sr-only" for="salary">Salaire</label>
+        <input ngModel name="salary" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Entrer le salaire" type="number" id="salary"/>
+      </div>
+
+    </div>
+
+    <div>
+      <label class="sr-only" for="description">Description</label>
+      <textarea
+        class="w-full rounded-lg border-gray-200 p-3 text-sm"
+        placeholder="Entrer description"
+        rows="4"
+        id="description"
+        ngModel
+        name="description"
+      ></textarea>
+    </div>
+
+    <div class="mt-4 flex justify-end">
+      <button type="button" (click)="closeModalChild(addOfferForm)" class="mr-4 inline-flex w-full border items-center justify-center rounded-lg bg-white px-5 py-3 text-gray-800 sm:w-auto hover:bg-gray-100">
+        <span class="font-medium">Annuler</span>
+      </button>
+      <button type="submit" class="ml-4 inline-flex w-full items-center justify-center rounded-lg bg-indigo-600 px-5 py-3 text-white sm:w-auto hover:bg-indigo-700">
+        <span class="font-medium">Confirmer</span>
+      </button>
+    </div>
+  </form>
+
+</div>

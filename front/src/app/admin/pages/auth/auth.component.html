@@ -1,0 +1,23 @@
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-lg">
+    <form action="" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl" #authAgent="ngForm" (ngSubmit)="login(authAgent)">
+      <p class="text-lg font-medium text-center mb-5">Login Agent</p>
+      <div class="">
+        <label for="email" class="text-sm font-medium"></label>
+        <div class="relative mt-1">
+          <input ngModel name="login" type="email" id="email" class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm" placeholder="Entrer email"/>
+        </div>
+      </div>
+
+      <div>
+        <label for="password" class="text-sm font-medium"></label>
+        <div class="relative mt-1">
+          <input ngModel name="password" type="password" id="password" class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm" placeholder="Entrer le mot de passe"/>
+        </div>
+      </div>
+      <button type="submit" class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+        Login
+      </button>
+    </form>
+  </div>
+</div>

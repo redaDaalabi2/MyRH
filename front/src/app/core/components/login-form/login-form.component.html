@@ -1,0 +1,24 @@
+<div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12 w-1/2 mx-auto mt-24">
+  <h3 class="mb-6 text-xl font-semibold sm:text-center sm:mb-8 sm:text-2xl">
+    Login
+  </h3>
+  <app-loader *ngIf="loader"></app-loader>
+  <form *ngIf="!loader" #addCompanyForm="ngForm" (ngSubmit)="login(addCompanyForm)" class="space-y-3 mt-4">
+    <div>
+      <label class="sr-only" for="login">Username</label>
+      <input ngModel name="login" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="entrer username" type="text" id="login"/>
+    </div>
+
+    <div>
+      <label class="sr-only" for="password">Mot de passe</label>
+      <input ngModel name="password" class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="entere mot de passe" type="password" id="password"/>
+    </div>
+
+    <div class="mt-4 flex justify-center w-full">
+      <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-5 py-3 text-white hover:bg-indigo-700">
+        Connexion
+      </button>
+    </div>
+  </form>
+
+</div>

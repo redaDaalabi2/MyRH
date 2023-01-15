@@ -1,0 +1,80 @@
+<section aria-labelledby="timeline-title" class="lg:col-span-1 lg:col-start-3">
+  <div class="bg-white px-2 py-3">
+    <h2 id="timeline-title" class="text-lg text-gray-900 font-bold">{{offer.title}}</h2>
+
+    <!-- Activity Feed -->
+    <div class="mt-6 flow-root flex flex-col">
+      <div class="flex flex-col justify-start items-start">
+        <h4 class="text-gray-600 text-sm">Description : {{offer.description}}</h4>
+      </div>
+      <div class="flex flex-col justify-start items-start space-y-4 py-4 px-1 text-gray-600">
+        <h2 class="mb-2 mt-3 text-lg font-medium text-gray-700">Détails d'offre : </h2>
+        <div class="flex flex-row text-sm">
+          <p class="flex items-center  text-gray-500">
+            <span class="font-semibold mr-2 text-xs uppercase">Nom de société : </span>
+            <span>{{offer.company.name}}</span>
+          </p>
+        </div>
+
+        <div class="flex flex-row text-sm">
+          <p class="flex items-center  text-gray-500">
+            <span class="font-semibold mr-2 text-xs uppercase">Date de l'offre d'emploi : </span>
+            <span>{{offer.created | date: "mediumDate" }}</span>
+          </p>
+        </div>
+        <div class="flex flex-row text-sm">
+          <p class="flex items-center  text-gray-500">
+            <span class="font-semibold mr-2 text-xs uppercase">Profile : </span>
+            <span>{{offer.profile.title}}</span>
+          </p>
+        </div>
+        <div class="flex flex-row text-sm">
+          <p class="flex items-center  text-gray-500">
+            <span class="font-semibold mr-2 text-xs uppercase">Diplôme : </span>
+            <span>{{offer.degree}}</span>
+          </p>
+        </div>
+        <div class="flex flex-row text-sm">
+          <p class="flex items-center  text-gray-500">
+            <span class="font-semibold mr-2 text-xs uppercase">Salaire : </span>
+            <span>{{offer.salary == null ? "To discuss":offer.salary+" DH"}}</span>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col justify-start items-start space-y-4 text-gray-600">
+        <h2 class="mb-2 mt-3 text-lg font-medium text-gray-700 -px-3">Coordonnées de l'entreprise pour postuler : </h2>
+        <div class="flex flex-row text-sm">
+          <p class="flex items-center  text-gray-500">
+            <span class="font-semibold mr-2 text-xs uppercase">Nom de société : </span>
+            <span>{{offer.company.name}}</span>
+          </p>
+        </div>
+
+        <div class="flex flex-row text-sm">
+          <p class="flex items-center  text-gray-500">
+            <span class="font-semibold mr-2 text-xs uppercase">Addresse : </span>
+            <span>{{offer.company.address}}</span>
+          </p>
+        </div>
+        <div class="flex flex-row text-sm">
+          <p class="flex items-center  text-gray-500">
+            <span class="font-semibold mr-2 text-xs uppercase">Email : </span>
+            <span>{{offer.company.email}}</span>
+          </p>
+        </div>
+        <div class="flex flex-row text-sm">
+          <p class="flex items-center  text-gray-500">
+            <span class="font-semibold mr-2 text-xs uppercase">Telephone : </span>
+            <span>{{offer.company.phone}}</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <div class="justify-stretch mt-6 flex flex-col">
+      <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Appliquer</button>
+    </div>
+  </div>
+</section>

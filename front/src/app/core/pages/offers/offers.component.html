@@ -1,0 +1,54 @@
+<div class="min-h-full mb-48">
+  <app-header></app-header>
+  <main class="mt-16 pb-8 h-screen">
+    <div data-aos="fade-up" *ngIf="offers.length == 0" class="flex justify-center w-full">
+      <div class="rounded-md bg-blue-50 p-4 w-1/2">
+        <div class="flex">
+          <!-- <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M19 10.5a8.5 8.5 0 11-17 0 8.5 8.5 0 0117 0zM8.25 9.75A.75.75 0 019 9h.253a1.75 1.75 0 011.709 2.13l-.46 2.066a.25.25 0 00.245.304H11a.75.75 0 010 1.5h-.253a1.75 1.75 0 01-1.709-2.13l.46-2.066a.25.25 0 00-.245-.304H9a.75.75 0 01-.75-.75zM10 7a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            </svg>
+          </div> -->
+          <div class="ml-3 flex-1 md:flex md:justify-between">
+            <p class="text-sm text-blue-700">Il n'y a pas d'offres !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <h1 class="sr-only">Page title</h1>
+      <!-- Main 3 column grid -->
+      <div *ngIf="offers && offers.length > 0" class="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8">
+        <!-- All offers -->
+        <div class="grid grid-cols-1 gap-4 lg:col-span-2">
+          <section aria-labelledby="section-1-title">
+            <h2 class="sr-only" id="section-1-title">Section title</h2>
+            <div class="overflow-y-scroll h-screen rounded-lg bg-white shadow">
+              <div *ngIf="!loader" class="p-6">
+                <app-post *ngFor="let one of offers" [canDelete]="false" [offer]="one" (viewDetails)="viewOfferDetails($event)"></app-post>
+              </div>
+              <div *ngIf="loader" class="p-6">
+                  <app-loader></app-loader>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Offer Details -->
+        <div class="grid grid-cols-1 gap-4">
+          <section aria-labelledby="section-2-title">
+            <h2 class="sr-only" id="section-2-title">Section title</h2>
+            <div class="overflow-hidden rounded-lg bg-white shadow">
+              <div *ngIf="!loader" class="p-6">
+                <app-offer-details [offer]="viewOffer" ></app-offer-details>
+              </div>
+              <div *ngIf="loader" class="p-6">
+                <app-loader></app-loader>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
