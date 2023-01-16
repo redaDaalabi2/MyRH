@@ -3,6 +3,7 @@ package com.myrh.controllers;
 import com.myrh.dto.RegisterRequest;
 import com.myrh.models.Company;
 import com.myrh.services.CompanyService;
+import com.myrh.utils.Mail;
 import com.myrh.utils.RandomCode;
 import com.myrh.utils.SendMail;
 import com.myrh.utils.Sms;
@@ -37,8 +38,8 @@ public class CompanyController {
         setTime = LocalTime.now();
         Sms sms = new Sms();
         sms.sendSms(req.getPhone(), "Your verification code is: " + codeVer);
-//        sendMail.sendVerificationCode(company.getEmail(), "Code register verification.",
-//                "Code verification is: "+codeVer+".");
+        Mail mail = new Mail();
+        mail.sendMail(req.getEmail(), "Your verification code is: " + codeVer);
         return ResponseEntity.ok(company);
     }
 
