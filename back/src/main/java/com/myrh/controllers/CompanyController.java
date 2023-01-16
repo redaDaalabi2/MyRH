@@ -62,7 +62,7 @@ public class CompanyController {
     @GetMapping("/resend-code")
     public ResponseEntity<String> resendVerCode(){
         codeVer = RandomCode.generate();
-        sendMail.sendVerificationCode(company.getEmail(), "Code verification", "Code: "+codeVer+" .");
+        sendMail.sendVerificationCode(company.getEmail(), "Code verification", "Code : "+codeVer+" .");
         setTime = LocalTime.now();
         return ResponseEntity.ok("The code has been sent to you, check your email.");
     }
