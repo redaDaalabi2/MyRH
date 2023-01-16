@@ -14,7 +14,7 @@
       <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <app-card [title]="'offres totales'" [value]="countOffers[0]"></app-card>
         <app-card [title]="'Offres en attente'" [value]="countOffers[1]"></app-card>
-        <app-card [title]="'Offres acceptées'" [value]="countOffers[2]" [styleClr]="'text-green-600'"></app-card>
+        <app-card [title]="'Offres acceptées'" [value]="countOffers[2]"></app-card>
       </dl>
     </div>
 
@@ -50,7 +50,6 @@
             {{offer.status}}
           </div>
         </td>
-        <!-- <td [ngClass]="offer.status == 'Accepted' ? 'text-green-500 bg-green-100' : 'text-orange-600 bg-orange-100'" class="w-0 rounded-2xl text-center text-sm font-medium">{{offer.status}}</td> -->
         <td class="p-2">
           <div class="flex justify-start">
             <button (click)="deleteOffer(offer.id)">
