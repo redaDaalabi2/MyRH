@@ -5,7 +5,6 @@ import com.myrh.models.Company;
 import com.myrh.services.CompanyService;
 import com.myrh.utils.RandomCode;
 import com.myrh.utils.SendMail;
-import com.myrh.utils.Sms;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.*;
@@ -18,13 +17,12 @@ public class CompanyController {
     private Company company;
     private int codeVer;
     private final SendMail sendMail;
-    private final Sms sms;
     private final CompanyService companyService;
     private LocalTime setTime;
 
-    public CompanyController(SendMail sendMail, CompanyService companyService, Sms sms) {
+    public CompanyController(SendMail sendMail, CompanyService companyService) {
         this.sendMail = sendMail;
-        this.sms = sms;
+//        this.sms = sms;
         this.companyService = companyService;
     }
 

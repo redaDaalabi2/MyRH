@@ -27,6 +27,7 @@ public class AuthController {
     private final CompanyService companyService;
     private final JwtUtils jwtUtils;
 
+
     @PostMapping("agent")
     public ResponseEntity<Object> agentAuth(
             @RequestBody AuthRequest request
