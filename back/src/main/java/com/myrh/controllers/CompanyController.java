@@ -37,7 +37,7 @@ public class CompanyController {
         codeVer = RandomCode.generate();
         System.out.println(codeVer);
         setTime = LocalTime.now();
-        sms.sendSms(req.getPhone(), "Your verification code is : " + codeVer);
+//        sms.sendSms(req.getPhone(), "Your verification code is : " + codeVer);
         sendMail.sendVerificationCode(company.getEmail(), "Code verification.",
                 "Le code verification est : "+codeVer+".");
         return ResponseEntity.ok(company);
