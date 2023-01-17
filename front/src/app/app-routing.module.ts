@@ -8,6 +8,7 @@ import {ProfileComponent} from "./core/pages/profile/profile.component";
 import {OffersComponent} from "./core/pages/offers/offers.component";
 import {AuthComponent} from "./admin/pages/auth/auth.component";
 import {DashboardComponent} from "./admin/pages/dashboard/dashboard.component";
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'admin/auth', component: AuthComponent },
   { path: 'admin/dashboard', component: DashboardComponent },
+  { path: '**', pathMatch: 'full', component: NotFoundComponent }
 ];
 
 
